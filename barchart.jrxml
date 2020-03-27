@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-07-03T09:05:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="barchart" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a0537507-75bd-4c7d-a220-1373b570245d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TutorialAdapter "/>
+	<queryString>
+		<![CDATA[SELECT jaspertry.revenue.`Year`,
+	jaspertry.revenue.`System`,
+	jaspertry.revenue.`Source`,
+	jaspertry.revenue.`Fund`,
+	jaspertry.revenue.`Revenue`
+FROM jaspertry.revenue]]>
+	</queryString>
+	<field name="Year" class="java.lang.Integer"/>
+	<field name="System" class="java.lang.String"/>
+	<field name="Source" class="java.lang.String"/>
+	<field name="Fund" class="java.lang.String"/>
+	<field name="Revenue" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="0" width="310" height="20" uuid="2dbe2518-a86e-4a83-8dda-e507b8fc62c6"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[A Display of Bar Chart]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="0" width="100" height="20" uuid="9e2c2fde-7c07-43dd-a694-490a726f0794"/>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="0" width="100" height="20" uuid="bca6e6f4-e0ea-48a9-ad24-cb5b58590426"/>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="0" width="100" height="20" uuid="ae638f86-a291-4ab2-9353-bdc4bd1c88ad"/>
+				<text><![CDATA[Fund]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="0" width="100" height="20" uuid="05db49e0-9ed5-45ee-9f40-291d9296ae7e"/>
+				<text><![CDATA[Revenue]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="9" y="2" width="100" height="18" uuid="68e88a24-93ca-4c4d-bb16-276a1794aad2"/>
+				<textFieldExpression><![CDATA[$F{Year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="2" width="100" height="18" uuid="5419e7cc-fbe9-47b1-b7fd-1a086d9a7c6a"/>
+				<textFieldExpression><![CDATA[$F{System}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="3" width="100" height="16" uuid="4281853c-d07e-4492-921e-88310b1a556e"/>
+				<textFieldExpression><![CDATA[$F{Fund}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="4" width="100" height="15" uuid="54548e52-b9bb-4082-99c9-b1b5c7edd990"/>
+				<textFieldExpression><![CDATA[$F{Revenue}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-3" width="560" height="1" uuid="d6559d30-7207-4a3b-8564-a496e5c15d35"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="236" splitType="Stretch">
+			<stackedBarChart>
+				<chart evaluationTime="Report">
+					<reportElement mode="Transparent" x="0" y="4" width="550" height="225" backcolor="#FFFFFF" uuid="b708f613-2650-4dc2-80d3-b27262bf398e"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{System}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{System}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Revenue}]]></valueExpression>
+						<labelExpression><![CDATA[$F{Fund}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</stackedBarChart>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

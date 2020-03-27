@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-07-03T06:29:41 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Revenue" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cfb77b25-2ab8-4a72-bd94-1664cc87f68e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="amFzcGVydHJ5LnJldmVudWUgQVMgLDExNywxMTEsYjg5MjlmMjktMGNkZS00ZGQ1LTg1YjctOWY1&#xA;ZTM0YWFkNzQ4Ow=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TutorialAdapter "/>
+	<queryString>
+		<![CDATA[SELECT jaspertry.revenue.`Year`,
+	jaspertry.revenue.`System`,
+	jaspertry.revenue.`Source`,
+	jaspertry.revenue.`Fund`,
+	jaspertry.revenue.`Revenue`
+FROM jaspertry.revenue]]>
+	</queryString>
+	<field name="Year" class="java.lang.Integer"/>
+	<field name="System" class="java.lang.String"/>
+	<field name="Source" class="java.lang.String"/>
+	<field name="Fund" class="java.lang.String"/>
+	<field name="Revenue" class="java.lang.Integer"/>
+	<variable name="RevenueSum" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{Revenue}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="4" width="591" height="30" uuid="daa5543f-2ecc-43e9-a41a-63ee43571eec"/>
+				<textElement textAlignment="Center">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GHANA CIVIL AVIATION AUTHORITY FUND SOURCE REVENUE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="4" width="100" height="20" uuid="f773fa6d-9fd7-4a01-b9bd-f3f39cd96a42"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="4" width="100" height="20" uuid="ad0f43ae-9516-455f-8ef1-569c280c77fd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="14" width="100" height="20" uuid="0877c219-5e5d-4b59-a00e-fea0b02340a0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Source]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="10" width="100" height="20" uuid="e77b6d1f-7cda-4a66-aebc-ca2f46755163"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fund]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="809" height="1" uuid="88386f13-8c8b-4808-bcf2-202dd4e657ab"/>
+			</line>
+			<staticText>
+				<reportElement x="670" y="5" width="100" height="30" uuid="ddb6e5ae-e736-47cb-88b2-bb94b2a40693"/>
+				<text><![CDATA[Revenue ($)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="100" height="30" uuid="4491f559-6942-43f8-9486-02b01282d5ba"/>
+				<textFieldExpression><![CDATA[$F{Year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="3" width="100" height="30" uuid="ff2b09ec-989f-45be-8b44-1490c73f0828"/>
+				<textFieldExpression><![CDATA[$F{System}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="3" width="100" height="30" uuid="b6d84668-f5d9-4997-9bee-85565e3fa160"/>
+				<textFieldExpression><![CDATA[$F{Source}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="524" y="4" width="100" height="30" uuid="25267143-2efb-4ea0-91e2-ed64541d217d"/>
+				<textFieldExpression><![CDATA[$F{Fund}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="670" y="4" width="100" height="30" uuid="06fa037d-83a6-48eb-86ca-163641fe51ba"/>
+				<textFieldExpression><![CDATA[$F{Revenue}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="488" y="8" width="120" height="30" backcolor="#3865FC" uuid="67b08bf0-430d-47ae-8e74-f22db2f347f5"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Revenue:]]></text>
+			</staticText>
+			<textField pattern="#,##0.###;(#,##0.###)">
+				<reportElement x="626" y="9" width="140" height="30" uuid="ee361b2b-9133-4e37-a404-85125f35006b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{RevenueSum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

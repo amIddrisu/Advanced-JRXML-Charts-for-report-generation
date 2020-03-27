@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-07-03T09:29:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PieChart" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ef0c065-cbf4-495e-a96f-71af31b0aa21">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="amFzcGVydHJ5LnJldmVudWUgQVMgLDE1OSw1NixhYmJjZWUyYy1kMjVjLTQwNTUtYTliNS05MzE2&#xA;YTM5MDNhNWM7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TutorialAdapter "/>
+	<queryString>
+		<![CDATA[SELECT jaspertry.revenue.`Year`,
+	jaspertry.revenue.`System`,
+	jaspertry.revenue.`Source`,
+	jaspertry.revenue.`Fund`,
+	jaspertry.revenue.`Revenue`
+FROM jaspertry.revenue]]>
+	</queryString>
+	<field name="Year" class="java.lang.Integer"/>
+	<field name="System" class="java.lang.String"/>
+	<field name="Source" class="java.lang.String"/>
+	<field name="Fund" class="java.lang.String"/>
+	<field name="Revenue" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="8" width="520" height="30" uuid="a8685a2b-12a1-40fc-b0a3-ed66c6f65dc0"/>
+				<textElement textAlignment="Center">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[A Pie Chart of REVENUES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="0" width="100" height="19" uuid="d082cc47-cf5a-48be-b87a-0e66b39bb14f"/>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="0" width="100" height="19" uuid="0f042ff2-335f-410e-888c-03fdbf71fb54"/>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="100" height="19" uuid="d89f28a7-eb92-4ea4-87fc-b92d868d9076"/>
+				<text><![CDATA[Fund]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="0" width="100" height="22" uuid="88ff79b6-725b-46a0-a93a-e26bd834a15c"/>
+				<text><![CDATA[Revenue]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-10" y="25" width="575" height="1" uuid="65718348-eb75-4eed-b4e8-19a28b5bb8dc"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="5" width="100" height="19" uuid="b8290f2a-431a-4b86-a6c1-915898ec0aa3"/>
+				<textFieldExpression><![CDATA[$F{Year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="4" width="100" height="20" uuid="01de90a4-d620-4ff7-999b-0e3379f994af"/>
+				<textFieldExpression><![CDATA[$F{System}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="5" width="100" height="19" uuid="ad788045-e87c-4aba-9d6c-ffce27014dc1"/>
+				<textFieldExpression><![CDATA[$F{Fund}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="5" width="100" height="22" uuid="94e33d33-458c-45af-9948-2569d1185079"/>
+				<textFieldExpression><![CDATA[$F{Revenue}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="229" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

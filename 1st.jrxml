@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-07-03T05:32:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="1st" language="javascript" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b9806de9-cb53-4dfa-bc8f-dd8daf440fdb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="amFzcGVydHJ5LmNpdHkgQVMgLDE2NCw3MCw0ODVhZjgzYy03ZDFkLTQ2ZDctOTZiZS1hMTFkZDc2&#xA;Yzc0ZGI7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="test_connector"/>
+	<queryString>
+		<![CDATA[SELECT jaspertry.city.`Name`,
+	jaspertry.city.`CountryCode`,
+	jaspertry.city.`Population`,
+	jaspertry.city.`District`
+FROM jaspertry.city]]>
+	</queryString>
+	<field name="Name" class="java.lang.String"/>
+	<field name="CountryCode" class="java.lang.String"/>
+	<field name="Population" class="java.lang.Integer"/>
+	<field name="District" class="java.lang.String"/>
+	<variable name="population_sum" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{Population}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="2" width="560" height="30" backcolor="#ACA9FC" uuid="4738d098-31fd-47a2-8493-0263759bcb60"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Welcome to Human Resource Training Section of GCAA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49">
+			<staticText>
+				<reportElement x="320" y="11" width="237" height="30" uuid="cc6fe559-8562-4ec4-8ea0-dede26bd5a52"/>
+				<textElement>
+					<font fontName="Pristina" size="19"/>
+				</textElement>
+				<text><![CDATA[This is a sample Test report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="16" width="180" height="30" uuid="fde8ccfb-29f5-42e2-8b49-a7871827ac49"/>
+				<text><![CDATA[Total number of countries in this report:]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="178" y="16" width="100" height="30" uuid="d4eafca5-107f-49dd-a2f1-192f27895842"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="24" width="100" height="19" uuid="d4afa7f4-ce41-4935-8e43-a2c152356a3a"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="20" width="100" height="16" uuid="5635e335-3c19-43b3-a488-a4e64fafd954"/>
+				<text><![CDATA[Countrycode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="20" width="100" height="17" uuid="3a11dc12-3f79-4d31-a0b8-f6f487d854db"/>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="21" width="100" height="16" uuid="adb86314-e78c-4dd6-bf1e-511ca0f3365a"/>
+				<text><![CDATA[Population]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="37" width="560" height="1" uuid="95e8e000-975c-4895-b525-4e3aa64478c9"/>
+			</line>
+			<line>
+				<reportElement x="-3" y="10" width="560" height="1" uuid="a9edeabf-625e-4173-a799-25674f93491f"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="6" width="100" height="14" uuid="27f09488-864a-4e3f-89b5-19f0c87bef9f"/>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="4" width="100" height="16" uuid="fd36a0e7-7bef-4678-9e0a-af860c4237ee"/>
+				<textFieldExpression><![CDATA[$F{CountryCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="6" width="100" height="14" uuid="54cc4f25-8905-48bf-8533-6f9cc0ad8c53"/>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###)" isBlankWhenNull="false">
+				<reportElement x="437" y="7" width="100" height="13" uuid="cfea1b36-a2b5-477b-8898-3315e6336ad3"/>
+				<textFieldExpression><![CDATA[$F{Population}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="304" y="1" width="100" height="19" uuid="e9e6a8a2-55ac-4f8a-b620-b100652e0d9f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField pattern="#,##0.###;(#,##0.###)">
+				<reportElement x="410" y="4" width="130" height="30" uuid="122cd529-5124-41fc-ba90-889382925cd0"/>
+				<textFieldExpression><![CDATA[$V{population_sum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="371" y="6" width="100" height="30" uuid="135f219f-dcaf-449a-9d69-34252aa12d68"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="471" y="6" width="100" height="30" uuid="81711bf5-fb60-4144-b0fa-5d8dcb6c1f85"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="8" width="532" height="26" uuid="d16a1005-52a6-4b2e-b87d-7fadb179b883"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="16" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[This report was generated for the purpose of testing and evaluation ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
